@@ -1,0 +1,198 @@
+[
+  {
+    "TenantId": "eae211fa-6799-4a1a-83bc-6f4ff30bfc97",
+    "TimeGenerated": "2025-06-26T15:50:17.890066Z",
+    "IncidentName": "Phishing Email Campaign",
+    "Title": "Suspicious emails targeting employees",
+    "Description": "Users received phishing emails attempting to steal credentials.",
+    "Severity": "Medium",
+    "Status": "Active",
+    "Classification": "TruePositive",
+    "ClassificationComment": "Confirmed by SOC.",
+    "ClassificationReason": "ConfirmedWithEvidence",
+    "Owner": "browndavid@kustoindustries.com",
+    "ProviderName": "Microsoft Sentinel",
+    "ProviderIncidentId": "d30b8632-265e-4405-9df8-e149223117fc",
+    "FirstActivityTime": "2025-06-26T15:50:17.890066Z",
+    "LastActivityTime": "2025-06-26T16:30:17.890066Z",
+    "FirstModifiedTime": "2025-06-26T16:35:17.890066Z",
+    "LastModifiedTime": "2025-06-26T16:40:17.890066Z",
+    "CreatedTime": "2025-06-26T16:41:17.890066Z",
+    "ClosedTime": "",
+    "IncidentNumber": 762203,
+    "RelatedAnalyticRuleIds": [
+      "3663b720-7112-4a3e-8dae-69d5227986d6",
+      "138e8b0f-b773-4e80-960e-ffb196c3d23f"
+    ],
+    "AlertIds": [
+      "PHISH-7e3e3786-f292-40f9-b259-17cf6630d30e",
+      "PHISH-cb5f63b2-98ab-4d7d-8cef-b8943a0a4efc",
+      "PHISH-1fe018ed-89a6-4f58-a88e-96d27ae9d16f"
+    ],
+    "BookmarkIds": [
+      "f04fa0f7-7751-4a0a-a0a3-b455834e1610"
+    ],
+    "Comments": [
+      {
+        "CreatedTime": "2025-06-26T16:45:17.890066Z",
+        "Comment": "His chance marriage move quite health.",
+        "CreatedBy": "tuckerbrandon@kustoindustries.com"
+      }
+    ],
+    "Tasks": [
+      {
+        "TaskName": "Triage Alert",
+        "AssignedTo": "ramirezjared@kustoindustries.com"
+      },
+      {
+        "TaskName": "Confirm Host Impact",
+        "AssignedTo": "freylynn@kustoindustries.com"
+      }
+    ],
+    "Labels": [
+      "APT",
+      "Phishing"
+    ],
+    "IncidentUrl": "https://security.microsoft.com/incidents/272618",
+    "AdditionalData": {
+      "ImpactedHosts": [
+        "email-84.graves-white.info",
+        "desktop-18.lopez.com"
+      ]
+    },
+    "ModifiedBy": "brandon72@kustoindustries.com",
+    "SourceSystem": "Microsoft Sentinel",
+    "Type": "SecurityIncident"
+  },
+  {
+    "TenantId": "49e5653a-7f7a-4e7c-af9c-b8f767e84d87",
+    "TimeGenerated": "2025-06-26T16:50:17.890066Z",
+    "IncidentName": "Netcat Shell Access",
+    "Title": "Netcat backdoor session established",
+    "Description": "Malware dropped netcat to open a remote shell.",
+    "Severity": "High",
+    "Status": "Active",
+    "Classification": "TruePositive",
+    "ClassificationComment": "Confirmed by SOC.",
+    "ClassificationReason": "ConfirmedWithEvidence",
+    "Owner": "ryanwilliams@kustoindustries.com",
+    "ProviderName": "Microsoft Sentinel",
+    "ProviderIncidentId": "ccd4f572-b6f3-40a8-b2c6-990ef8176a72",
+    "FirstActivityTime": "2025-06-26T16:50:17.890066Z",
+    "LastActivityTime": "2025-06-26T17:30:17.890066Z",
+    "FirstModifiedTime": "2025-06-26T17:35:17.890066Z",
+    "LastModifiedTime": "2025-06-26T17:40:17.890066Z",
+    "CreatedTime": "2025-06-26T17:41:17.890066Z",
+    "ClosedTime": "",
+    "IncidentNumber": 806846,
+    "RelatedAnalyticRuleIds": [
+      "ce52c049-363c-43b1-b892-148d7e3338ec",
+      "28a7928d-cd25-4d87-ac57-8bf89a4daa49"
+    ],
+    "AlertIds": [
+      "NC-faf13bd9-1588-4a7b-afc3-8d1f91eb7156",
+      "NC-c109049f-ee42-427b-9454-b179a41b9e4a",
+      "NC-f8292457-56f1-4d73-ae9b-84c57d63aa1f"
+    ],
+    "BookmarkIds": [
+      "ce2c698d-f06f-4c44-b582-6a337bb8f57e"
+    ],
+    "Comments": [
+      {
+        "CreatedTime": "2025-06-26T17:45:17.890066Z",
+        "Comment": "After agree catch might.",
+        "CreatedBy": "webbcrystal@kustoindustries.com"
+      }
+    ],
+    "Tasks": [
+      {
+        "TaskName": "Triage Alert",
+        "AssignedTo": "dylan88@kustoindustries.com"
+      },
+      {
+        "TaskName": "Confirm Host Impact",
+        "AssignedTo": "laurajohnson@kustoindustries.com"
+      }
+    ],
+    "Labels": [
+      "APT",
+      "CommandAndControl"
+    ],
+    "IncidentUrl": "https://security.microsoft.com/incidents/505837",
+    "AdditionalData": {
+      "ImpactedHosts": [
+        "laptop-42.pierce-williams.biz",
+        "laptop-25.anderson.com"
+      ]
+    },
+    "ModifiedBy": "alicia77@kustoindustries.com",
+    "SourceSystem": "Microsoft Sentinel",
+    "Type": "SecurityIncident"
+  },
+  {
+    "TenantId": "c0a56d3a-8b52-4302-b196-b88f2a50c852",
+    "TimeGenerated": "2025-06-26T17:50:17.890066Z",
+    "IncidentName": "Ransomware Deployment - WannaCry Variant",
+    "Title": "WannaCry ransomware execution",
+    "Description": "Ransomware executed across endpoints, mimicking WannaCry behavior.",
+    "Severity": "High",
+    "Status": "Active",
+    "Classification": "TruePositive",
+    "ClassificationComment": "Confirmed by SOC.",
+    "ClassificationReason": "ConfirmedWithEvidence",
+    "Owner": "cynthia98@kustoindustries.com",
+    "ProviderName": "Microsoft Sentinel",
+    "ProviderIncidentId": "6de1c5ae-ca21-47a3-af1a-35eabd8c4105",
+    "FirstActivityTime": "2025-06-26T17:50:17.890066Z",
+    "LastActivityTime": "2025-06-26T18:30:17.890066Z",
+    "FirstModifiedTime": "2025-06-26T18:35:17.890066Z",
+    "LastModifiedTime": "2025-06-26T18:40:17.890066Z",
+    "CreatedTime": "2025-06-26T18:41:17.890066Z",
+    "ClosedTime": "",
+    "IncidentNumber": 769413,
+    "RelatedAnalyticRuleIds": [
+      "aaa3acd1-1e68-4e48-8168-b86b619ee638",
+      "28128693-7e0c-4f32-b252-6100d4a8e8dc"
+    ],
+    "AlertIds": [
+      "WC-6258c6d2-16bd-4fa2-b325-0016117cd068",
+      "WC-77818183-047b-41ee-b87a-6d763d3f90f4",
+      "WC-2a84c7de-6d13-461a-b856-c014eacc4319"
+    ],
+    "BookmarkIds": [
+      "580d007c-d092-457c-9f5a-75077ced88e7"
+    ],
+    "Comments": [
+      {
+        "CreatedTime": "2025-06-26T18:45:17.890066Z",
+        "Comment": "Speak effect take federal adult buy already.",
+        "CreatedBy": "turnerbrittney@kustoindustries.com"
+      }
+    ],
+    "Tasks": [
+      {
+        "TaskName": "Triage Alert",
+        "AssignedTo": "mallory29@kustoindustries.com"
+      },
+      {
+        "TaskName": "Confirm Host Impact",
+        "AssignedTo": "ftravis@kustoindustries.com"
+      }
+    ],
+    "Labels": [
+      "Ransomware",
+      "WannaCry",
+      "Impact"
+    ],
+    "IncidentUrl": "https://security.microsoft.com/incidents/553344",
+    "AdditionalData": {
+      "ImpactedHosts": [
+        "db-68.rivera-brooks.com",
+        "email-38.barnes-ramsey.biz"
+      ]
+    },
+    "ModifiedBy": "justin39@kustoindustries.com",
+    "SourceSystem": "Microsoft Sentinel",
+    "Type": "SecurityIncident"
+  }
+]
