@@ -1,7 +1,3 @@
-// ============================================================================
-// Table schemas matching generator CSV_COLUMNS output
-// ============================================================================
-
 .create table DeviceProcessEvents (
     TenantId: string,
     AccountDomain: string,
