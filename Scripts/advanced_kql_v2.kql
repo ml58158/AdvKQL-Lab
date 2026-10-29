@@ -73,7 +73,6 @@
     SourceSystem: string,
     Type: string
 )
-
 .create table SecurityIncident (
     TenantId: string,
     TimeGenerated: datetime,
@@ -105,10 +104,8 @@
     AdditionalData: dynamic,
     ModifiedBy: string,
     SourceSystem: string,
-    Status: dynamic,
     Type: string
 )
-
 .create table DeviceEvents (
     TenantId: string,
     AccountDomain: string,
@@ -181,7 +178,6 @@
     SourceSystem: string,
     Type: string
 )
-
 .create table DeviceFileEvents (
     TenantId: string,
     ActionType: string,
@@ -247,7 +243,6 @@
     SourceSystem: string,
     Type: string
 )
-
 .create table DeviceLogonEvents (
     TenantId: string,
     AccountDomain: string,
@@ -304,7 +299,6 @@
     SourceSystem: string,
     Type: string
 )
-
 .create table EmailEvents (
     TenantId: string,
     AttachmentCount: int,
@@ -360,7 +354,6 @@
     SourceSystem: string,
     Type: string
 )
-
 .create table IdentityLogonEvents (
     TenantId: string,
     TimeGenerated: datetime,
@@ -395,7 +388,6 @@
     SourceSystem: string,
     Type: string
 )
-
 .create table SecurityAlert (
     TimeGenerated: datetime,
     AlertName: string,
@@ -431,7 +423,6 @@
     WorkspaceResourceGroup: string,
     WorkspaceSubscriptionId: string
 )
-
 .create table SigninLogs (
     TenantId: string,
     SourceSystem: string,
@@ -526,7 +517,6 @@
     RiskLevel: string,
     Type: string
 )
-
 .create table DeviceNetworkEvents (
     TenantId: string,
     ActionType: string,
@@ -579,7 +569,6 @@
     SourceSystem: string,
     Type: string
 )
-
 .create table DeviceInfo (
     TenantId: string,
     AdditionalFields: dynamic,
@@ -635,7 +624,6 @@
     SourceSystem: string,
     Type: string
 )
-
 .create table DeviceRegistryEvents (
     TenantId: string,
     ActionType: string,
@@ -686,7 +674,6 @@
     SourceSystem: string,
     Type: string
 )
-
 .create table UrlClickEvents (
     TenantId: string,
     Timestamp: datetime,
@@ -708,7 +695,6 @@
     SourceSystem: string,
     Type: string
 )
-
 .create table CloudAppEvents (
     TenantId: string,
     AccountId: string,
@@ -751,7 +737,6 @@
     SourceSystem: string,
     Type: string
 )
-
 .create table IdentityDirectoryEvents (
     TenantId: string,
     TimeGenerated: datetime,
@@ -781,7 +766,6 @@
     SourceSystem: string,
     Type: string
 )
-
 .create table IdentityInfo (
     TenantId: string,
     TimeGenerated: datetime,
@@ -850,7 +834,6 @@
     SAMAccountName: string,
     Type: string
 )
-
 .create table IdentityQueryEvents (
     TenantId: string,
     TimeGenerated: datetime,
@@ -882,7 +865,6 @@
     SourceSystem: string,
     Type: string
 )
-
 .create table EmailAttachmentInfo (
     TenantId: string,
     FileName: string,
@@ -905,7 +887,6 @@
     SourceSystem: string,
     Type: string
 )
-
 .create table AlertEvidence (
     Timestamp: datetime,
     AlertId: string,
@@ -950,7 +931,6 @@
     ResourceID: string,
     SubscriptionId: string
 )
-
 .create table AlertInfo (
     Timestamp: datetime,
     AlertId: string,
@@ -961,7 +941,6 @@
     DetectionSource: string,
     AttackTechniques: string
 )
-
 .create table EmailUrlInfo (
     TenantId: string,
     NetworkMessageId: string,
@@ -976,7 +955,6 @@
     SourceSystem: string,
     Type: string
 )
-
 .create table FileMaliciousContentInfo (
     Timestamp: datetime,
     Workload: string,
