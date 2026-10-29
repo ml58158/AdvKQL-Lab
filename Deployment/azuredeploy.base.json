@@ -1,0 +1,143 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "clusterNamePrefix": {
+      "type": "string",
+      "defaultValue": "advkql",
+      "metadata": {
+        "description": "Prefix for ADX cluster name; a unique suffix is added."
+      }
+    },
+    "databaseName": {
+      "type": "string",
+      "defaultValue": "advkql-db",
+      "metadata": {
+        "description": "Name of the ADX database."
+      }
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "East US 2",
+      "metadata": {
+        "description": "Azure location for resources."
+      }
+    },
+    "adminAppId": {
+      "type": "string",
+      "defaultValue": "e948cdc5-a8c8-49e8-a9cf-7c02d9d6a3b7",
+      "metadata": {
+        "description": "Skillable automation application identity; granted AllDatabasesAdmin."
+      }
+    },
+    "labUsersGroupId": {
+      "type": "string",
+      "defaultValue": "a0551c41-c28b-40dc-8e29-0a6edc597eba",
+      "metadata": {
+        "description": "Lab Users CSR lod security group; granted AllDatabasesViewer."
+      }
+    },
+    "scriptForceUpdateTag": {
+      "type": "string",
+      "defaultValue": "__GIT_BLOB_SHA__",
+      "metadata": {
+        "description": "Version of embedded KQL; generated from the source file's Git blob SHA. Change only to rerun on an existing database."
+      }
+    }
+  },
+  "variables": {
+    "clusterName": "[toLower(concat(parameters('clusterNamePrefix'), uniqueString(resourceGroup().id, subscription().subscriptionId)))]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Kusto/Clusters",
+      "apiVersion": "2024-04-13",
+      "name": "[variables('clusterName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Standard_D11_v2",
+        "tier": "Standard",
+        "capacity": 2
+      },
+      "identity": {
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "enableAutoStop": true,
+        "engineType": "V3",
+        "publicNetworkAccess": "Enabled"
+      }
+    },
+    {
+      "type": "Microsoft.Kusto/clusters/databases",
+      "apiVersion": "2024-04-13",
+      "name": "[format('{0}/{1}', variables('clusterName'), parameters('databaseName'))]",
+      "kind": "ReadWrite",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Kusto/Clusters', variables('clusterName'))]"
+      ],
+      "properties": {
+        "softDeletePeriod": "P365D",
+        "hotCachePeriod": "PT1H"
+      }
+    },
+    {
+      "type": "Microsoft.Kusto/clusters/principalAssignments",
+      "apiVersion": "2024-04-13",
+      "name": "[format('{0}/{1}', variables('clusterName'), 'LodClusterAdmin')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Kusto/Clusters', variables('clusterName'))]"
+      ],
+      "properties": {
+        "principalId": "[parameters('adminAppId')]",
+        "principalType": "App",
+        "role": "AllDatabasesAdmin",
+        "tenantId": "[subscription().tenantId]"
+      }
+    },
+    {
+      "type": "Microsoft.Kusto/clusters/principalAssignments",
+      "apiVersion": "2024-04-13",
+      "name": "[format('{0}/{1}', variables('clusterName'), 'LabUsersViewer')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Kusto/Clusters', variables('clusterName'))]"
+      ],
+      "properties": {
+        "principalId": "[parameters('labUsersGroupId')]",
+        "principalType": "Group",
+        "role": "AllDatabasesViewer",
+        "tenantId": "[subscription().tenantId]"
+      }
+    },
+    {
+      "type": "Microsoft.Kusto/clusters/databases/scripts",
+      "apiVersion": "2024-04-13",
+      "name": "[format('{0}/{1}/schema-script', variables('clusterName'), parameters('databaseName'))]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Kusto/Clusters/Databases', variables('clusterName'), parameters('databaseName'))]"
+      ],
+      "properties": {
+        "scriptContent": "__INLINE_KQL_SCRIPT__",
+        "forceUpdateTag": "[parameters('scriptForceUpdateTag')]",
+        "continueOnErrors": false,
+        "scriptLevel": "Database",
+        "principalPermissionsAction": "RetainPermissionOnScriptCompletion"
+      }
+    }
+  ],
+  "outputs": {
+    "ResourceGroupName": {
+      "type": "string",
+      "value": "[resourceGroup().name]"
+    },
+    "ClusterName": {
+      "type": "string",
+      "value": "[variables('clusterName')]"
+    },
+    "DatabaseName": {
+      "type": "string",
+      "value": "[parameters('databaseName')]"
+    }
+  }
+}
