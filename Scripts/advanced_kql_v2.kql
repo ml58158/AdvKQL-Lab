@@ -105,7 +105,6 @@
     AdditionalData: dynamic,
     ModifiedBy: string,
     SourceSystem: string,
-    Status: dynamic,
     Type: string
 )
 
